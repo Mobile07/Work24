@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">Work24</string>
+    <string name="app_name">Screens</string>
+    <string name="get_started">Get Started</string>
+    <string name="work_or_learn_on_your_schedule">Work or learn on your schedule</string>
+    <string name="todo">todo</string>
+    <string name="Anywhere_anytime">Anywhere,anytime</string>
 </resources>
