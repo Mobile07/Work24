@@ -2,4 +2,8 @@
     <string name="app_name">Work24</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="gig_tab_title">My Gigs</string>
+    <string name="saved_gig_tab_title">Saved Gigs</string>
+    <string name="job_tab_title">My Jobs</string>
+    <string name="saved_job_tab_title">Saved Jobs</string>
 </resources>

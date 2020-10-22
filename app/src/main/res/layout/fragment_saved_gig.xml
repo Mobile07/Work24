@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorWhiteGray"
-    tools:context=".SavedGigFragment">
+    tools:context=".views.fragments.SavedGigFragment">
 
     <TextView
         android:id="@+id/savedgig_viewtext"
