@@ -9,23 +9,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MyJobScreen"></activity>
-        <activity android:name=".MyGigScreen" />
-        <activity android:name=".verification">
+        <activity android:name=".views.activities.MyJobScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".PasswordRecovery">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        <activity android:name=".views.activities.MyGigScreen" >
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
-        <activity android:name=".Forgotpassword" />
+        <activity android:name=".views.activities.verification">
+        </activity>
+        <activity android:name=".views.activities.PasswordRecovery">
+        </activity>
+        <activity android:name=".views.activities.Forgotpassword" />
     </application>
 
 </manifest>
