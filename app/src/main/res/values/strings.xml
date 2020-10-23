@@ -1,4 +1,9 @@
 <resources>
+    <string name="get_started">Get Started</string>
+    <string name="work_or_learn_on_your_schedule">Work or learn on your schedule</string>
+    <string name="todo">todo</string>
+    <string name="Anywhere_anytime">Anywhere,anytime</string>
+
     <string name="app_name">Work24</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -6,4 +11,5 @@
     <string name="saved_gig_tab_title">Saved Gigs</string>
     <string name="job_tab_title">My Jobs</string>
     <string name="saved_job_tab_title">Saved Jobs</string>
+
 </resources>

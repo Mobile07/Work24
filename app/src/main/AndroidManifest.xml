@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.pyropy.work24">
+        package="com.pyropy.work24">
+
 
     <application
         android:allowBackup="true"
@@ -24,6 +25,27 @@
         <activity android:name=".views.activities.PasswordRecovery">
         </activity>
         <activity android:name=".views.activities.Forgotpassword" />
-    </application>
+    
 
-</manifest>
+
+            <activity
+                android:name="com.pyropy.work24.SplashScreen"
+                >
+                
+
+            </activity>
+
+            <activity android:name="com.pyropy.work24.MyAppIntroActivity"
+                android:label="My Custom AppIntro"
+                >
+
+            </activity>
+            <activity android:name="com.pyropy.work24.MainActivity"
+
+                >
+
+
+            </activity>
+        </application>
+
+    </manifest>

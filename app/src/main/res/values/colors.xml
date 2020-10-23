@@ -13,5 +13,6 @@
     <color name="colorLightGreen">#11C79E</color>
     <color name="colorTransparentGreen">#C5DFB4</color>
     <color name="colorSkyBlue">#41709C</color>
-
+    <color name="splash_background_color">#5456e1</color>
+    <color name="splash_background_color3">#34EC93</color>
 </resources>
