@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment;
 import android.os.Bundle;
 
 import com.pyropy.work24.views.fragments.DashboardFragment;
+import com.pyropy.work24.views.fragments.JobsFragment;
 import com.pyropy.work24.views.fragments.LearnFragment;
 import com.pyropy.work24.views.fragments.ChatFragment;
 import com.pyropy.work24.views.fragments.ProfileFragment;
@@ -50,6 +51,9 @@ public class DashboardActivity extends AppCompatActivity {
                         break;
                     case R.id.bottom_nav_search:
                         fragment = new LearnFragment();
+                        break;
+                    case R.id.bottom_nav_jobs:
+                        fragment = new JobsFragment();
                         break;
                     case R.id.bottom_nav_chat:
                         fragment = new ChatFragment();
