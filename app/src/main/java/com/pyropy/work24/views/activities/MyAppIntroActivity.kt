@@ -1,4 +1,4 @@
-package com.pyropy.work24
+package com.pyropy.work24.views.activities
 
 import android.content.Intent
 import android.graphics.Color
@@ -6,8 +6,9 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import com.github.appintro.AppIntro
 import com.github.appintro.AppIntroFragment
+import com.pyropy.work24.R
 
-class MyAppIntroActivity : AppIntro() {
+public class MyAppIntroActivity : AppIntro() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         // Make sure you don't call setContentView!
@@ -53,7 +54,7 @@ class MyAppIntroActivity : AppIntro() {
         super.onSkipPressed(currentFragment)
         // Decide what to do when the user clicks on "Skip"
         finish()
-        val intent = Intent(this, MainActivity::class.java)
+        val intent = Intent(this, MyJobScreen::class.java)
         startActivity(intent)
 
     }
@@ -62,7 +63,7 @@ class MyAppIntroActivity : AppIntro() {
         super.onDonePressed(currentFragment)
         // Decide what to do when the user clicks on "Done"
         finish()
-        val intent = Intent(this, MainActivity::class.java)
+        val intent = Intent(this, MyJobScreen::class.java)
         startActivity(intent)
     }
 }
