@@ -18,6 +18,9 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 1.8
+        env:
+          GPR_USER: ${{ secrets.GPR_USER }}
+          GPR_API_KEY: ${{ secrets.WORK24_PACKAGE_READER }}
       - name: Build debug APK
         run: bash ./gradlew assembleDebug --stacktrace
       - name: Upload APK
