@@ -31,8 +31,8 @@ allprojects {
                     /** Create github.properties in root project folder file with
                      ** gpr.usr=GITHUB_USER_ID & gpr.key=PERSONAL_ACCESS_TOKEN
                      ** Or set env variable GPR_USER & GPR_API_KEY if not adding a properties file**/
-                    username = githubProperties['gpr.usr'] ?: System.getenv("GPR_USER")
-                    password = githubProperties['gpr.key'] ?: System.getenv("GPR_API_KEY")
+                    username = System.getenv("GPR_USER")
+                    password = System.getenv("GPR_API_KEY")
                 }
             }
         }
