@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "774244518460",
+    "firebase_url": "https://work24-4c515.firebaseio.com",
+    "project_id": "work24-4c515",
+    "storage_bucket": "work24-4c515.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:774244518460:android:e9b8ae26ae649e3c00d139",
+        "android_client_info": {
+          "package_name": "com.pyropy.work24"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "774244518460-3itvc910b74kk1fntno5697f0iegifub.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.pyropy.work24",
+            "certificate_hash": "4d4ca75dfc20460f6e8c5626d77d4506e7698ae7"
+          }
+        },
+        {
+          "client_id": "774244518460-ltm8jovv7kpslbn0v5dm5frnbmm4g9f6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDuIl3ItjHTxcatokHS5WgmVtr4w6JUfEg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "774244518460-ltm8jovv7kpslbn0v5dm5frnbmm4g9f6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
