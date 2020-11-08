@@ -5,7 +5,7 @@
     <color name="colorAccent">#03DAC5</color>
     <color name="colorWhite">#FFFFFF</color>
     <color name="colorBlack">#000000</color>
-    <color name="colorWhiteGray">#EFEFEF</color>
+    <color name="colorWhiteGray">#D8D8D8</color>
     <color name="colorTealGreen">#0E999A</color>
     <color name="colorOliveTeal">#34EC9A</color>
     <color name="colorLightTeal">#67AFBC</color>
@@ -15,4 +15,11 @@
     <color name="colorSkyBlue">#41709C</color>
     <color name="splash_background_color">#5456e1</color>
     <color name="splash_background_color3">#34EC93</color>
+
+
+    <color name="materialYellow">#ffb300</color>
+    <color name="materialGreen">#00bfa5</color>
+    <color name="deepPurple">#7c4dff</color>
+    <color name="pinkAccent">#ff4081</color>
+    <color name="transparentWhite">#27FFFFFF</color>
 </resources>

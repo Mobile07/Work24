@@ -5,6 +5,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 
 import android.os.Bundle;
+import android.view.Menu;
 
 import com.pyropy.work24.views.fragments.DashboardFragment;
 import com.pyropy.work24.views.fragments.JobsFragment;
@@ -66,5 +67,11 @@ public class DashboardActivity extends AppCompatActivity {
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,fragment).commit();
             }
         });
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main_menu,menu);
+        return true;
     }
 }
