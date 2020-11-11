@@ -112,9 +112,9 @@ private ImageView logo, splashImg;
     }
 
     private void animateComponents() {
-        splashImg.animate().translationY(-3500).setDuration(1000).setStartDelay(4000);
-        logo.animate().translationY(2500).setDuration(1000).setStartDelay(4000);
-        mLottieAnimationView.animate().translationY(2500).setDuration(1000).setStartDelay(4000);
+        splashImg.animate().translationY(-3500).setDuration(1500).setStartDelay(3000);
+        logo.animate().translationY(2500).setDuration(1500).setStartDelay(3000);
+        mLottieAnimationView.animate().translationY(2500).setDuration(1500).setStartDelay(3000);
     }
 
     private void initComponents() {

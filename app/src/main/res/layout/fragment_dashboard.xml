@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".views.fragments.DashboardFragment"
-    android:background="@color/colorTransparentGreen"
+    android:background="@color/colorWhiteGray"
     android:orientation="vertical"
     android:padding="10dp"
     >
@@ -17,7 +17,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:background="@color/colorTransparentGreen"
+        android:background="@color/colorWhiteGray"
         />
 
     <TextView
@@ -27,7 +27,7 @@
         android:layout_marginTop="2dp"
         android:text="Hello,"
         android:textColor="@color/colorBlack"
-        android:textSize="24sp"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/appBarLayout" />
 
@@ -38,12 +38,11 @@
         android:layout_marginStart="5dp"
         android:text="Emmanuel"
         android:textAppearance="@android:style/TextAppearance.Material.Large"
-        android:textSize="24sp"
+        android:textColor="@color/colorBlack"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/textView6"
-        app:layout_constraintTop_toTopOf="@+id/textView6"
-        android:textColor="@color/colorBlack"
-        />
+        app:layout_constraintTop_toTopOf="@+id/textView6" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -70,9 +69,9 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/course_slab"
                     android:layout_width="0dp"
-                    android:layout_height="100dp"
+                    android:layout_height="150dp"
                     android:padding="8dp"
-                    app:cardCornerRadius="10dp"
+                    app:cardCornerRadius="6dp"
                     app:cardElevation="4dp"
                     app:cardUseCompatPadding="true"
                     app:layout_constraintStart_toStartOf="parent"
@@ -82,16 +81,30 @@
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                        android:layout_height="match_parent"
+                        android:background="@drawable/roseana"
+                        >
 
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
                             android:text="50 Courses"
                             android:textAlignment="center"
+                            android:textColor="@color/colorWhite"
                             android:textSize="18sp"
-                            android:textStyle="bold"
-                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+
+                        <ImageView
+                            android:id="@+id/imageView4"
+                            android:layout_width="90dp"
+                            android:layout_height="90dp"
+                            android:layout_marginTop="8dp"
+                            android:background="@drawable/icon_tile_bg"
+                            android:padding="10dp"
+                            android:src="@drawable/icons_open_book"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
@@ -102,9 +115,9 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/job_slab"
                     android:layout_width="0dp"
-                    android:layout_height="100dp"
+                    android:layout_height="150dp"
                     android:padding="8dp"
-                    app:cardCornerRadius="10dp"
+                    app:cardCornerRadius="6dp"
                     app:cardElevation="4dp"
                     app:cardUseCompatPadding="true"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -115,16 +128,31 @@
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                        android:layout_height="match_parent"
+                        android:background="@drawable/purple_love"
+                        >
 
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="1dp"
                             android:text="600 Jobs"
                             android:textAlignment="center"
+                            android:textColor="#FFFFFF"
                             android:textSize="18sp"
-                            android:textStyle="bold"
                             app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+
+                        <ImageView
+                            android:id="@+id/imageView5"
+                            android:layout_width="90dp"
+                            android:layout_height="90dp"
+                            android:layout_marginTop="8dp"
+                            android:background="@drawable/icon_tile_bg"
+                            android:padding="10dp"
+                            android:src="@drawable/icons_job_seeker"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
@@ -142,9 +170,9 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/instructor_slab"
                     android:layout_width="0dp"
-                    android:layout_height="100dp"
+                    android:layout_height="150dp"
                     android:padding="8dp"
-                    app:cardCornerRadius="10dp"
+                    app:cardCornerRadius="6dp"
                     app:cardElevation="4dp"
                     app:cardUseCompatPadding="true"
                     app:layout_constraintStart_toStartOf="parent"
@@ -154,16 +182,30 @@
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                        android:layout_height="match_parent"
+                        android:background="@drawable/scooter"
+                        >
 
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
                             android:text="40 Instructors"
                             android:textAlignment="center"
+                            android:textColor="#FFFFFF"
                             android:textSize="18sp"
-                            android:textStyle="bold"
-                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/imageView6" />
+
+                        <ImageView
+                            android:id="@+id/imageView6"
+                            android:layout_width="90dp"
+                            android:layout_height="90dp"
+                            android:layout_marginTop="8dp"
+                            android:background="@drawable/icon_tile_bg"
+                            android:padding="1dp"
+                            android:src="@drawable/icons_teacher_messaging"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
@@ -174,29 +216,43 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/gig_slab"
                     android:layout_width="0dp"
-                    android:layout_height="100dp"
+                    android:layout_height="150dp"
                     android:padding="8dp"
-                    app:cardCornerRadius="10dp"
+                    app:cardCornerRadius="6dp"
                     app:cardElevation="4dp"
                     app:cardUseCompatPadding="true"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintWidth_percent=".5"
-                    android:background="@color/colorTealGreen"
+
                     >
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                        android:layout_height="match_parent"
+                        android:background="@drawable/lush"
+                        >
 
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
                             android:text="1300 Gigs"
                             android:textAlignment="center"
+                            android:textColor="#FFFFFF"
                             android:textSize="18sp"
-                            android:textStyle="bold"
-                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/imageView7" />
+
+                        <ImageView
+                            android:id="@+id/imageView7"
+                            android:layout_width="90dp"
+                            android:layout_height="90dp"
+                            android:layout_marginTop="8dp"
+                            android:background="@drawable/icon_tile_bg"
+                            android:padding="4dp"
+                            android:src="@drawable/icons_purchase_order"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
@@ -205,15 +261,28 @@
 
                 </androidx.cardview.widget.CardView>
             </androidx.constraintlayout.widget.ConstraintLayout>
-            <TextView
-                android:id="@+id/section_one"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:text="Trending Courses"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                />
+                android:orientation="horizontal"
+                >
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/icons_hot_article"
+                    />
+
+                <TextView
+                    android:id="@+id/section_one"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Trending Courses"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    />
+
+            </LinearLayout>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/trending_courses"
@@ -228,15 +297,28 @@
                 tools:itemCount="1"
                 tools:listitem="@layout/trending_course_item" />
 
-            <TextView
-                android:id="@+id/section_two"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:text="Most Selling Gigs"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                />
+                android:orientation="horizontal"
+                >
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/icons_top_arrow"
+                    />
+
+                <TextView
+                    android:id="@+id/section_two"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Most Selling Gigs"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    />
+
+            </LinearLayout>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/trending_gigs"
@@ -251,15 +333,28 @@
                 tools:itemCount="1"
                 tools:listitem="@layout/trending_course_item" />
 
-            <TextView
-                android:id="@+id/section_three"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:text="Fresh New Jobs"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                />
+                android:orientation="horizontal"
+                >
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/icons_new"
+                    />
+
+                <TextView
+                    android:id="@+id/section_three"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Fresh New Jobs"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    />
+
+            </LinearLayout>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/top_jobs"

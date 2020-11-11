@@ -6,44 +6,44 @@
         android:id="@+id/bottom_nav_dashboard"
         android:title="Dashboard"
         android:icon="@drawable/dashboard"
-        app:cnb_iconColor="@color/colorBlack"
+        app:cnb_iconColor="@color/colorWhite"
         app:cnb_backgroundColor="@color/colorPrimaryDark"
-        app:cnb_textColor="@color/colorBlack"
+        app:cnb_textColor="@color/colorWhite"
         />
 
     <item
         android:id="@+id/bottom_nav_search"
         android:title="Learn"
         android:icon="@drawable/ic_baseline_school_24"
-        app:cnb_iconColor="@color/colorBlack"
+        app:cnb_iconColor="@color/colorWhite"
         app:cnb_backgroundColor="@color/colorPrimaryDark"
-        app:cnb_textColor="@color/colorBlack"
+        app:cnb_textColor="@color/colorWhite"
         />
 
     <item
         android:id="@+id/bottom_nav_jobs"
         android:title="Jobs"
         android:icon="@drawable/jobs"
-        app:cnb_iconColor="@color/colorBlack"
+        app:cnb_iconColor="@color/colorWhite"
         app:cnb_backgroundColor="@color/colorPrimaryDark"
-        app:cnb_textColor="@color/colorBlack"/>
+        app:cnb_textColor="@color/colorWhite"/>
 
     <item
         android:id="@+id/bottom_nav_chat"
         android:title="Chat"
         android:icon="@drawable/chat"
-        app:cnb_iconColor="@color/colorBlack"
+        app:cnb_iconColor="@color/colorWhite"
         app:cnb_backgroundColor="@color/colorPrimaryDark"
-        app:cnb_textColor="@color/colorBlack"
+        app:cnb_textColor="@color/colorWhite"
         />
 
     <item
         android:id="@+id/bottom_nav_profile"
         android:title="Profile"
         android:icon="@drawable/profile"
-        app:cnb_iconColor="@color/colorBlack"
+        app:cnb_iconColor="@color/colorWhite"
         app:cnb_backgroundColor="@color/colorPrimaryDark"
-        app:cnb_textColor="@color/colorBlack"
+        app:cnb_textColor="@color/colorWhite"
         />
 
 
