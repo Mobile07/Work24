@@ -24,10 +24,7 @@ public class CoursesFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         mViewGroup = (ViewGroup) inflater.inflate(R.layout.courses, container, false);
         recyclerView = (RecyclerView) mViewGroup.findViewById(R.id.course_recycler);
-
-
-
-
+        
         return mViewGroup;
     }
 }
