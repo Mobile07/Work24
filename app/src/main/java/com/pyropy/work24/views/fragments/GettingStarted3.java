@@ -55,7 +55,7 @@ public class GettingStarted3 extends Fragment {
 
         ImageView imageView = (ImageView) root.findViewById(R.id.startedthree);
         ImageView indicator = (ImageView) root.findViewById(R.id.indicatorthree);
-        Glide.with(this).load(R.drawable.slide_five).into(imageView);
+        //Glide.with(this).load(R.drawable.slide_five).into(imageView);
         //Glide.with(this).load(R.drawable.indicator_two).into(indicator);
         return root;
     }

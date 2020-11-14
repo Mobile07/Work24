@@ -26,7 +26,7 @@ public class GettingStarted2 extends Fragment {
         ImageView imageView = (ImageView) root.findViewById(R.id.startedtwo);
         ImageView indicator = (ImageView) root.findViewById(R.id.indicatortwo);
 
-        Glide.with(this).load(R.drawable.slide_img).into(imageView);
+        //Glide.with(this).load(R.drawable.slide_img).into(imageView);
         //Glide.with(this).load(R.drawable.indicator_two).into(indicator);
 
         TextView skipBtn = (TextView) root.findViewById(R.id.skip);

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".views.fragments.DashboardFragment"
-    android:background="@color/colorWhiteGray"
+    android:background="@color/colorLightestGrey"
     android:orientation="vertical"
     android:padding="10dp"
     >
@@ -17,7 +17,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:background="@color/colorWhiteGray"
+        android:background="@color/colorLightestGrey"
         />
 
     <TextView
