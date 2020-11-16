@@ -16,6 +16,11 @@ android {
     compileSdkVersion 30
     buildToolsVersion "30.0.1"
 
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
     defaultConfig {
         applicationId "com.pyropy.work24"
         minSdkVersion 23
@@ -81,6 +86,12 @@ android {
         implementation 'com.google.firebase:firebase-database:16.0.4'
         implementation 'com.google.firebase:firebase-auth:16.0.5'
         implementation 'com.google.firebase:firebase-storage:16.0.4'
+        implementation 'com.wdullaer:materialdatetimepicker:4.2.3'
     }
+}
+
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
 }
 

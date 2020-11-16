@@ -21,6 +21,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.pyropy.work24.R;
+import com.pyropy.work24.database.FirebaseUtil;
 
 public class Login extends AppCompatActivity {
 
@@ -32,6 +33,7 @@ public class Login extends AppCompatActivity {
     String mUserId,mPassword;
     RelativeLayout myProgressBar;
     private String mUserNode;
+    private FirebaseUtil mUtil;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +60,7 @@ public class Login extends AppCompatActivity {
         callSignUp = findViewById(R.id.call_signup);
         addEventToBtn();
         addLoginEventToBtn();
+        mUtil = FirebaseUtil.getInstances(getApplicationContext());
     }
 
     private void addLoginEventToBtn() {
@@ -84,7 +87,7 @@ public class Login extends AppCompatActivity {
         String userPassword = userPass.getEditText().getText().toString().trim();
         mPassword=userPassword;
 
-        Query checkUser = FirebaseDatabase.getInstance().getReference("Users").orderByChild("email").equalTo(email);
+        Query checkUser = mUtil.mFirebaseDatabase.getReference("Users").orderByChild("email").equalTo(email);
         checkUser.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {

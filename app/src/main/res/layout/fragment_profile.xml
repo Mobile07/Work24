@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".views.fragments.ProfileFragment"
-    android:background="@color/colorLightestGrey"
+    android:background="@color/colorTransparentGreen"
     >
 
     <com.google.android.material.appbar.AppBarLayout
@@ -169,7 +169,7 @@
             >
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/cardView"
+                android:id="@+id/add_tile"
                 android:layout_width="50dp"
                 android:layout_height="match_parent"
                 app:cardUseCompatPadding="true"
@@ -205,7 +205,7 @@
                 android:orientation="horizontal"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/cardView"
+                app:layout_constraintStart_toEndOf="@+id/add_tile"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:listitem="@layout/my_profile_recycle_item" />
 

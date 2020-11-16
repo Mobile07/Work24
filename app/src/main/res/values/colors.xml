@@ -22,4 +22,5 @@
     <color name="deepPurple">#7c4dff</color>
     <color name="pinkAccent">#ff4081</color>
     <color name="transparentWhite">#27FFFFFF</color>
+    <color name="darkGray">#404040</color>
 </resources>
