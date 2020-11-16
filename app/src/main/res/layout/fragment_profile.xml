@@ -169,11 +169,7 @@
             >
 
             <androidx.cardview.widget.CardView
-<<<<<<< HEAD
                 android:id="@+id/add_tile"
-=======
-                android:id="@+id/cardView"
->>>>>>> afbb51d9070c11018c98b1746e2bd7300e0c213d
                 android:layout_width="50dp"
                 android:layout_height="match_parent"
                 app:cardUseCompatPadding="true"
@@ -209,11 +205,8 @@
                 android:orientation="horizontal"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-<<<<<<< HEAD
                 app:layout_constraintStart_toEndOf="@+id/add_tile"
-=======
-                app:layout_constraintStart_toEndOf="@+id/cardView"
->>>>>>> afbb51d9070c11018c98b1746e2bd7300e0c213d
+
                 app:layout_constraintTop_toTopOf="parent"
                 tools:listitem="@layout/my_profile_recycle_item" />
 
