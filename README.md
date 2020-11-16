@@ -23,3 +23,26 @@ Sign Up Screen
 
 Country Code
 ![CountryCode](screenshots/country_code.png "Country Code")
+
+Phone Number Verification 
+
+![Verification](screenshots/verify.png "Verify phone")
+
+
+Dashboard
+![Dashboard](screenshots/dashboard.png "Dashboard")
+
+
+Learn
+![CountryCode](screenshots/learn.png "Country Code")
+
+Jobs
+
+![jobs](screenshots/jobs.png "Jobs")
+
+User Profile
+
+![profile](screenshots/profile.png "User Profile")
+
+Chat
+![Chat](screenshots/chat.png "Chat")
