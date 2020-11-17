@@ -25,6 +25,7 @@ import com.google.firebase.auth.PhoneAuthProvider;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.pyropy.work24.R;
+import com.pyropy.work24.database.FirebaseUtil;
 import com.pyropy.work24.database.UserHelper;
 
 import java.util.concurrent.TimeUnit;
@@ -47,6 +48,7 @@ public class VerifyOTP extends AppCompatActivity {
     private String mUserPhoneNumber, mUsertype;
     private FirebaseDatabase mRootNode;
     private DatabaseReference mDbref;
+    private FirebaseUtil mfbUtil;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -124,7 +126,8 @@ public class VerifyOTP extends AppCompatActivity {
     };
 
     private void storeNewUserData() {
-        mRootNode = FirebaseDatabase.getInstance();
+        mfbUtil = FirebaseUtil.getInstances(getApplicationContext());
+        mRootNode = mfbUtil.mFirebaseDatabase;
         mDbref = mRootNode.getReference("Users");
 
         UserHelper addNewUser = new UserHelper(mUserFullname,mUserPassword,mUserEmail,mUserPhoneNumber,mUsertype);

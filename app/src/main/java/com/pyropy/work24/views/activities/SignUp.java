@@ -1,11 +1,14 @@
 package com.pyropy.work24.views.activities;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import cn.pedant.SweetAlert.SweetAlertDialog;
 
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -16,8 +19,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputLayout;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 import com.hbb20.CountryCodePicker;
 import com.pyropy.work24.R;
+import com.pyropy.work24.database.FirebaseUtil;
 
 public class SignUp extends AppCompatActivity {
 
@@ -31,6 +39,9 @@ public class SignUp extends AppCompatActivity {
     private static final String SHARED_PREFS = "com.pyropy.nodal.STATUS";
     private static final String REG_STATUS = "regstatus";
     String mUserType;
+    private FirebaseUtil mUtil;
+    boolean status = false;
+    private String mUserPhone;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +64,7 @@ public class SignUp extends AppCompatActivity {
         password = findViewById(R.id.password);
         mRadioGroup = findViewById(R.id.user_type);
         confirmPassword = findViewById(R.id.confirm_password);
-
+        mUtil = FirebaseUtil.getInstances(this);
 
         callSignIn = findViewById(R.id.to_login);
         addEventToCallSignInBtn();
@@ -81,13 +92,17 @@ public class SignUp extends AppCompatActivity {
                 if (userEnteredPhone.charAt(0) == '0'){
                     userEnteredPhone = userEnteredPhone.substring(1);
                 }
-                String userPhone = "+"+mCountryCodePicker.getFullNumber()+userEnteredPhone;
+                mUserPhone = "+"+mCountryCodePicker.getFullNumber()+userEnteredPhone;
+
+                if (userExists()){
+                    return;
+                }
 
                 Intent uIntent = new Intent(getApplicationContext(),VerifyOTP.class);
                 uIntent.putExtra("fullname", userFullname);
                 uIntent.putExtra("email", userEmail);
                 uIntent.putExtra("password", userPassword);
-                uIntent.putExtra("phoneNo", userPhone);
+                uIntent.putExtra("phoneNo", mUserPhone);
                 uIntent.putExtra("userType", mUserType);
 
                 startActivity(uIntent);
@@ -95,6 +110,29 @@ public class SignUp extends AppCompatActivity {
                 finish();
             }
         });
+    }
+
+    private boolean userExists() {
+        Query checkUser = mUtil.mFirebaseDatabase.getReference("Users").orderByChild("phone").equalTo(mUserPhone);
+        Log.d("PHONE", mUserPhone);
+        checkUser.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if (dataSnapshot.exists()){
+                    status = true;
+                    Log.d("STATUS", "true");
+                    new SweetAlertDialog(SignUp.this, SweetAlertDialog.ERROR_TYPE)
+                            .setTitleText("Oops...")
+                            .setContentText("User already exists!");
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Toast.makeText(getApplicationContext(),databaseError.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+        return status;
     }
 
     private boolean validatePassword() {

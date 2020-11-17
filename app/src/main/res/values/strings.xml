@@ -12,4 +12,14 @@
     <string name="job_tab_title">My Jobs</string>
     <string name="saved_job_tab_title">Saved Jobs</string>
 
+    <string-array name="gig_category">
+        <item>choose a category</item>
+        <item>graphics Design</item>
+        <item>Mobile development</item>
+        <item>web design and development</item>
+        <item>writing and translation</item>
+        <item>digital marketing</item>
+        <item>Research</item>
+    </string-array>
+
 </resources>
