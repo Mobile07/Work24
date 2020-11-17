@@ -87,6 +87,7 @@ android {
         implementation 'com.google.firebase:firebase-auth:16.0.5'
         implementation 'com.google.firebase:firebase-storage:16.0.4'
         implementation 'com.wdullaer:materialdatetimepicker:4.2.3'
+        implementation 'com.github.f0ris.sweetalert:library:1.5.6'
     }
 }
 

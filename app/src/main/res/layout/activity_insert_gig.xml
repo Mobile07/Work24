@@ -284,17 +284,17 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="16dp"
-                        android:text="pick a date"
+                        android:text="Delivery DAte"
                         app:layout_constraintBottom_toBottomOf="@+id/gig_price"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="@+id/gig_price" />
 
                     <TextView
-                        android:id="@+id/textView11"
+                        android:id="@+id/delivery_date"
                         style="@style/Title"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Delivery Date"
+                        android:text=""
                         app:layout_constraintEnd_toEndOf="@+id/duedate"
                         app:layout_constraintStart_toStartOf="@+id/duedate"
                         app:layout_constraintTop_toTopOf="parent" />

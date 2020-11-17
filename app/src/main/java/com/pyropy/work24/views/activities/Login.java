@@ -125,6 +125,7 @@ public class Login extends AppCompatActivity {
             myProgressBar.setVisibility(View.GONE);
             Toast.makeText(getApplicationContext(), fullname+"\n"+email+"\n"+uPhone+"\n"+usertype, Toast.LENGTH_SHORT).show();
             Intent uIntent = new Intent(Login.this, DashboardActivity.class);
+            mUtil.mAuthPhone = uPhone;
             startActivity(uIntent);
             finish();
         }else{
