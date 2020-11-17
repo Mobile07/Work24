@@ -3,15 +3,18 @@ package com.pyropy.work24.model;
 public class UsersModel {
     public String email;
     public String phone;
-    public String userType;
+    public String userType, display_img,fullname,password;
 
     public UsersModel() {
     }
 
-    public UsersModel(String email, String phone, String userType) {
+    public UsersModel(String email, String phone, String userType, String display_img, String fullname, String password) {
         this.email = email;
         this.phone = phone;
         this.userType = userType;
+        this.display_img = display_img;
+        this.fullname = fullname;
+        this.password = password;
     }
 
     public String getEmail() {
@@ -36,5 +39,29 @@ public class UsersModel {
 
     public void setUserType(String userType) {
         this.userType = userType;
+    }
+
+    public String getDisplay_img() {
+        return display_img;
+    }
+
+    public void setDisplay_img(String display_img) {
+        this.display_img = display_img;
+    }
+
+    public String getFullname() {
+        return fullname;
+    }
+
+    public void setFullname(String fullname) {
+        this.fullname = fullname;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 }

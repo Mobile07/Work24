@@ -74,26 +74,27 @@ private ImageView logo, splashImg;
         setContentView(R.layout.activity_splash);
 
         initComponents();
-        if(!isFirstRun()){
-            animateComponents();
-            //saveRun();
-        }else{
-            new Handler().postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    Intent intent =  new Intent(SplashScreen.this, Login.class);
-
-//                    Pair[] uPairs = new Pair[1];
-//                    uPairs[0]  = new Pair<View, String>(logo,"logo_image");
-
-                    //ActivityOptions uOptions = ActivityOptions.makeSceneTransitionAnimation(SplashActivity.this,uPairs);
-
-                    //startActivity(intent,uOptions.toBundle());
-                    startActivity(intent);
-                    finish();
-                }
-            }, 5000);
-        }
+        animateComponents();
+//        if(!isFirstRun()){
+//            animateComponents();
+//            //saveRun();
+//        }else{
+//            new Handler().postDelayed(new Runnable() {
+//                @Override
+//                public void run() {
+//                    Intent intent =  new Intent(SplashScreen.this, Login.class);
+//
+////                    Pair[] uPairs = new Pair[1];
+////                    uPairs[0]  = new Pair<View, String>(logo,"logo_image");
+//
+//                    //ActivityOptions uOptions = ActivityOptions.makeSceneTransitionAnimation(SplashActivity.this,uPairs);
+//
+//                    //startActivity(intent,uOptions.toBundle());
+//                    startActivity(intent);
+//                    finish();
+//                }
+//            }, 5000);
+//        }
     }
 
     private void saveRun() {
