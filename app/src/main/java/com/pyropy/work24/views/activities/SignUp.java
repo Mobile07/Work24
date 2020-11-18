@@ -10,7 +10,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.view.WindowManager;
+
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RadioButton;
@@ -95,19 +95,21 @@ public class SignUp extends AppCompatActivity {
                 mUserPhone = "+"+mCountryCodePicker.getFullNumber()+userEnteredPhone;
 
                 if (userExists()){
-                    return;
+                    new SweetAlertDialog(SignUp.this, SweetAlertDialog.ERROR_TYPE)
+                            .setTitleText("Oops...")
+                            .setContentText("User already exists!");
+                }else{
+                    Intent uIntent = new Intent(getApplicationContext(),VerifyOTP.class);
+                    uIntent.putExtra("fullname", userFullname);
+                    uIntent.putExtra("email", userEmail);
+                    uIntent.putExtra("password", userPassword);
+                    uIntent.putExtra("phoneNo", mUserPhone);
+                    uIntent.putExtra("userType", mUserType);
+
+                    startActivity(uIntent);
+                    //saveRegistration();
+                    finish();
                 }
-
-                Intent uIntent = new Intent(getApplicationContext(),VerifyOTP.class);
-                uIntent.putExtra("fullname", userFullname);
-                uIntent.putExtra("email", userEmail);
-                uIntent.putExtra("password", userPassword);
-                uIntent.putExtra("phoneNo", mUserPhone);
-                uIntent.putExtra("userType", mUserType);
-
-                startActivity(uIntent);
-                //saveRegistration();
-                finish();
             }
         });
     }
@@ -121,9 +123,6 @@ public class SignUp extends AppCompatActivity {
                 if (dataSnapshot.exists()){
                     status = true;
                     Log.d("STATUS", "true");
-                    new SweetAlertDialog(SignUp.this, SweetAlertDialog.ERROR_TYPE)
-                            .setTitleText("Oops...")
-                            .setContentText("User already exists!");
                 }
             }
 
