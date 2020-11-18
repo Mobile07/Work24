@@ -72,8 +72,8 @@ public class ProfileFragment extends Fragment {
                     userId.setText(uModel.fullname);
                     userPhone.setText(uModel.phone);
                     userMail.setText(uModel.email);
-                    userType.setText(uModel.userType);
-                    fixProfile(uModel.userType);
+                    userType.setText(uModel.usertype);
+                    fixProfile(uModel.usertype);
                 }
 //                if (dataSnapshot.exists()){
 //                    UsersModel uUsersModel =

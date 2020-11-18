@@ -130,7 +130,7 @@ public class InsertGig extends AppCompatActivity implements DatePickerDialog.OnD
 
     @Override
     public void onDateSet(DatePickerDialog view, int year, int monthOfYear, int dayOfMonth) {
-        String date = "You picked the following date: "+dayOfMonth+"/"+(++monthOfYear)+"/"+year;
+        String date = dayOfMonth+"/"+(++monthOfYear)+"/"+year;
         deliveryDate.setText(date);
         //Toast.makeText(this,date,Toast.LENGTH_SHORT).show();
         dpd = null;
