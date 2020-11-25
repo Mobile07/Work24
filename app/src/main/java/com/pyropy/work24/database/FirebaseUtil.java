@@ -18,7 +18,7 @@ public class FirebaseUtil {
     public static FirebaseAuth mFirebaseAuth;
     public static DatabaseReference mDbRef;
     public static StorageReference mStoreRef;
-    public static String mAuthPhone="";
+    public static String mAuthEmail="";
 
     private FirebaseUtil(){}
 

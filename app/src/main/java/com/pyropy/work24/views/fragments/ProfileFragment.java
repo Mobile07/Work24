@@ -6,7 +6,10 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,6 +24,8 @@ import com.pyropy.work24.R;
 import com.pyropy.work24.database.FirebaseUtil;
 import com.pyropy.work24.model.UsersModel;
 import com.pyropy.work24.views.activities.InsertGig;
+import com.pyropy.work24.views.adapters.MyCoursesAdapter;
+import com.pyropy.work24.views.adapters.MyGigsAdapter;
 
 
 public class ProfileFragment extends Fragment {
@@ -29,6 +34,10 @@ public class ProfileFragment extends Fragment {
     private CardView mAddGigBtn;
     private FirebaseUtil mUtil;
     private TextView userId, userPhone, userMail, userType, profileTitle;
+    private RecyclerView userGigs, userCourses;
+    private LinearLayoutManager mRvManager;
+    MyGigsAdapter mMyGigsAdapter;
+    MyCoursesAdapter mMyCoursesAdapter;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -57,12 +66,14 @@ public class ProfileFragment extends Fragment {
         userMail = view.findViewById(R.id.userEmail);
         userType = view.findViewById(R.id.userType);
         profileTitle = view.findViewById(R.id.profileTitle);
+        userGigs = view.findViewById(R.id.user_gigs);
+        //userCourses = view.findViewById(R.id.user_courses);
 
         mUtil = FirebaseUtil.getInstances(getContext());
     }
 
     private void populateUserData() {
-        Query userDetails = mUtil.mDbRef.child("Users").orderByChild("phone").equalTo(mUtil.mAuthPhone);
+        Query userDetails = mUtil.mDbRef.child("Users").orderByKey().equalTo(mUtil.mAuthEmail);
         userDetails.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -75,9 +86,7 @@ public class ProfileFragment extends Fragment {
                     userType.setText(uModel.usertype);
                     fixProfile(uModel.usertype);
                 }
-//                if (dataSnapshot.exists()){
-//                    UsersModel uUsersModel =
-//                }
+
             }
 
             @Override
@@ -91,16 +100,36 @@ public class ProfileFragment extends Fragment {
         switch (userType){
             case "Freelancer":
                 profileTitle.setText("My Gigs");
+                //userGigs.setVisibility(RecyclerView.VISIBLE);
+                mRvManager = new LinearLayoutManager(getContext());
+                userGigs.setLayoutManager(mRvManager);
+                mMyGigsAdapter = new MyGigsAdapter(getContext());
+                userGigs.setAdapter(mMyGigsAdapter);
+                Log.d("STATUS", "MADE IT HERE");
+                //populateMyGigs();
                 break;
             case "Buyer":
                 profileTitle.setText("My Jobs");
                 break;
             case "Instructor":
                 profileTitle.setText("My Courses");
+                //userCourses.setVisibility(RecyclerView.VISIBLE);
+                populateMyCourses();
                 break;
             default:
                 profileTitle.setText("Favourites");
                 break;
         }
+    }
+
+    private void populateMyCourses() {
+
+    }
+
+    private void populateMyGigs() {
+        mRvManager = new LinearLayoutManager(getContext());
+        userGigs.setLayoutManager(mRvManager);
+        mMyGigsAdapter = new MyGigsAdapter(getContext());
+        userGigs.setAdapter(mMyGigsAdapter);
     }
 }

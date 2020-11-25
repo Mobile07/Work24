@@ -1,10 +1,16 @@
 package com.pyropy.work24.database;
 
-public class GigHelper {
+import android.os.Parcel;
+import android.os.Parcelable;
 
-    public String gigTitle, description, deliveryDate,price,img1Uri,img2Uri,img3Uri,category;
+import java.util.HashMap;
+import java.util.Map;
 
-    public GigHelper(String gigTitle, String description, String deliveryDate, String price, String img1Uri, String img2Uri, String img3Uri, String category) {
+public class GigHelper implements Parcelable {
+
+    public String gigTitle, description, deliveryDate,price,img1Uri,img2Uri,img3Uri,category,author, id,salesCount;
+
+    public GigHelper(String gigTitle, String description, String deliveryDate, String price, String img1Uri, String img2Uri, String img3Uri, String category, String author) {
         this.gigTitle = gigTitle;
         this.description = description;
         this.deliveryDate = deliveryDate;
@@ -13,9 +19,35 @@ public class GigHelper {
         this.img2Uri = img2Uri;
         this.img3Uri = img3Uri;
         this.category = category;
+        this.author = author;
     }
 
     public GigHelper(){}
+
+    protected GigHelper(Parcel in) {
+        gigTitle = in.readString();
+        description = in.readString();
+        deliveryDate = in.readString();
+        price = in.readString();
+        img1Uri = in.readString();
+        img2Uri = in.readString();
+        img3Uri = in.readString();
+        category = in.readString();
+        author = in.readString();
+        id = in.readString();
+    }
+
+    public static final Creator<GigHelper> CREATOR = new Creator<GigHelper>() {
+        @Override
+        public GigHelper createFromParcel(Parcel in) {
+            return new GigHelper(in);
+        }
+
+        @Override
+        public GigHelper[] newArray(int size) {
+            return new GigHelper[size];
+        }
+    };
 
     public String getGigTitle() {
         return gigTitle;
@@ -79,5 +111,64 @@ public class GigHelper {
 
     public void setCategory(String category) {
         this.category = category;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getSalesCount() {
+        return salesCount;
+    }
+
+    public void setSalesCount(String salesCount) {
+        this.salesCount = salesCount;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeString(gigTitle);
+        parcel.writeString(description);
+        parcel.writeString(deliveryDate);
+        parcel.writeString(price);
+        parcel.writeString(img1Uri);
+        parcel.writeString(img2Uri);
+        parcel.writeString(img3Uri);
+        parcel.writeString(category);
+        parcel.writeString(author);
+        parcel.writeString(id);
+    }
+
+    public Map<String, Object> toMap() {
+        HashMap<String, Object> result = new HashMap<>();
+        result.put("category", category);
+        result.put("author", author);
+        result.put("gigTitle", gigTitle);
+        result.put("description", description);
+        result.put("deliveryDate", deliveryDate);
+        result.put("price", price);
+        result.put("img1Uri", img1Uri);
+        result.put("img2Uri", img2Uri);
+        result.put("img3Uri", img3Uri);
+        result.put("salesCount", salesCount);
+
+        return result;
     }
 }

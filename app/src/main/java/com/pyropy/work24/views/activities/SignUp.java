@@ -1,14 +1,15 @@
 package com.pyropy.work24.views.activities;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import cn.pedant.SweetAlert.SweetAlertDialog;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 
 import android.widget.Button;
@@ -40,8 +41,11 @@ public class SignUp extends AppCompatActivity {
     private static final String REG_STATUS = "regstatus";
     String mUserType;
     private FirebaseUtil mUtil;
-    boolean status = false;
+    public static boolean status = false;
     private String mUserPhone;
+    private String mUserEmail;
+    private String mUserFullname;
+    private String mUserPassword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,9 +83,9 @@ public class SignUp extends AppCompatActivity {
                     return;
                 }
 
-                String userFullname = fullName.getEditText().getText().toString().trim();
-                String userEmail = email.getEditText().getText().toString().trim();
-                String userPassword = password.getEditText().getText().toString().trim();
+                mUserFullname = fullName.getEditText().getText().toString().trim();
+                mUserEmail = email.getEditText().getText().toString().trim();
+                mUserPassword = password.getEditText().getText().toString().trim();
                 int stdType = mRadioGroup.getCheckedRadioButtonId();
                 if (stdType == R.id.student){mUserType = "Student";}
                 if (stdType == R.id.instructor){mUserType = "Instructor";}
@@ -94,15 +98,26 @@ public class SignUp extends AppCompatActivity {
                 }
                 mUserPhone = "+"+mCountryCodePicker.getFullNumber()+userEnteredPhone;
 
-                if (userExists()){
-                    new SweetAlertDialog(SignUp.this, SweetAlertDialog.ERROR_TYPE)
-                            .setTitleText("Oops...")
-                            .setContentText("User already exists!");
+                checkUserDoesNotExistAndSave();
+            }
+        });
+    }
+
+    private void checkUserDoesNotExistAndSave() {
+        String mailParts[] = mUserEmail.split("@");
+        String mUserNode = mailParts[0];
+        //Query checkUser = mUtil.mFirebaseDatabase.getReference("Users").orderByChild("phone").equalTo(mUserPhone);
+        Query checkUser = mUtil.mFirebaseDatabase.getReference("Users").orderByKey().equalTo(mUserNode);
+        checkUser.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if (dataSnapshot.exists()){
+                    Toast.makeText(getApplicationContext(), "User already exists!", Toast.LENGTH_SHORT).show();
                 }else{
                     Intent uIntent = new Intent(getApplicationContext(),VerifyOTP.class);
-                    uIntent.putExtra("fullname", userFullname);
-                    uIntent.putExtra("email", userEmail);
-                    uIntent.putExtra("password", userPassword);
+                    uIntent.putExtra("fullname", mUserFullname);
+                    uIntent.putExtra("email", mUserEmail);
+                    uIntent.putExtra("password", mUserPassword);
                     uIntent.putExtra("phoneNo", mUserPhone);
                     uIntent.putExtra("userType", mUserType);
 
@@ -111,27 +126,12 @@ public class SignUp extends AppCompatActivity {
                     finish();
                 }
             }
-        });
-    }
-
-    private boolean userExists() {
-        Query checkUser = mUtil.mFirebaseDatabase.getReference("Users").orderByChild("phone").equalTo(mUserPhone);
-        Log.d("PHONE", mUserPhone);
-        checkUser.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                if (dataSnapshot.exists()){
-                    status = true;
-                    Log.d("STATUS", "true");
-                }
-            }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
                 Toast.makeText(getApplicationContext(),databaseError.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
-        return status;
     }
 
     private boolean validatePassword() {
