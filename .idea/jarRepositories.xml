@@ -36,5 +36,15 @@
       <option name="name" value="GitHubPackages" />
       <option name="url" value="https://maven.pkg.github.com/Cuberto/liquid-swipe-android" />
     </remote-repository>
+    <remote-repository>
+      <option name="id" value="maven" />
+      <option name="name" value="maven" />
+      <option name="url" value="file:/$PROJECT_DIR$/githubProperties.load(new%20FileInputStream(rootProject.file(%22github.properties%22)))" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="maven" />
+      <option name="name" value="maven" />
+      <option name="url" value="file:/$PROJECT_DIR$/app/githubProperties.load(new%20FileInputStream(rootProject.file(%22github.properties%22)))" />
+    </remote-repository>
   </component>
 </project>
