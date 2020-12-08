@@ -202,15 +202,18 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/user_gigs"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:orientation="horizontal"
+                android:visibility="visible"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/add_tile"
-
                 app:layout_constraintTop_toTopOf="parent"
                 tools:listitem="@layout/my_profile_recycle_item" />
+
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

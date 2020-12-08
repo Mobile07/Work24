@@ -50,7 +50,7 @@ public class DashboardFragment extends Fragment {
     }
 
     private void populateUserData() {
-        Query userDetails = mUtil.mDbRef.child("Users").orderByChild("phone").equalTo(mUtil.mAuthPhone);
+        Query userDetails = mUtil.mDbRef.child("Users").orderByKey().equalTo(mUtil.mAuthEmail);
         userDetails.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {

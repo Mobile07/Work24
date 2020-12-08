@@ -130,7 +130,7 @@ public class VerifyOTP extends AppCompatActivity {
         mRootNode = mfbUtil.mFirebaseDatabase;
         mDbref = mRootNode.getReference("Users");
 
-        UserHelper addNewUser = new UserHelper(mUserFullname,mUserPassword,mUserEmail,mUserPhoneNumber,mUsertype);
+        UserHelper addNewUser = new UserHelper(mUserFullname,mUserPassword,mUserEmail,mUserPhoneNumber,mUsertype, "");
         String mailParts[] = mUserEmail.split("@");
         String userNode = mailParts[0];
         mDbref.child(userNode).setValue(addNewUser);

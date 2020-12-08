@@ -87,7 +87,7 @@ public class Login extends AppCompatActivity {
         String userPassword = userPass.getEditText().getText().toString().trim();
         mPassword=userPassword;
 
-        Query checkUser = mUtil.mFirebaseDatabase.getReference("Users").orderByChild("email").equalTo(email);
+        Query checkUser = mUtil.mFirebaseDatabase.getReference("Users").orderByKey().equalTo(mUserNode);
         checkUser.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -125,7 +125,7 @@ public class Login extends AppCompatActivity {
             myProgressBar.setVisibility(View.GONE);
             Toast.makeText(getApplicationContext(), fullname+"\n"+email+"\n"+uPhone+"\n"+usertype, Toast.LENGTH_SHORT).show();
             Intent uIntent = new Intent(Login.this, DashboardActivity.class);
-            mUtil.mAuthPhone = uPhone;
+            mUtil.mAuthEmail = mUserNode;
             startActivity(uIntent);
             finish();
         }else{
