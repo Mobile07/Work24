@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/colorTransparentGreen"
+    android:background="#DAE7ED"
     >
 
     <com.google.android.material.appbar.AppBarLayout
@@ -35,7 +35,6 @@
         android:layout_height="0dp"
         android:layout_marginBottom="55dp"
         android:layout_weight="1"
-        android:background="@color/colorTransparentGreen"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
