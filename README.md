@@ -5,30 +5,30 @@ Screenshots
 ---------------------------------
 <div>  
 
-<img src="/screenshots/splash_screen.png" height="auto" width="300" hspace="20">
+<img src="/screenshots/splash_screen.png" height="auto" width="200" hspace="20">
 
-<img src="/screenshots/start_one.png" height="auto" width="300" hspace="20">
+<img src="/screenshots/start_one.png" height="auto" width="200" hspace="20">
 
-<img src="/screenshots/start_two.png" height="auto" width="300" hspace="20">
+<img src="/screenshots/start_two.png" height="auto" width="200" hspace="20">
 
-<img src="/screenshots/start_three.png" height="auto" width="300" hspace="20">
+<img src="/screenshots/start_three.png" height="auto" width="200" hspace="20">
 
-<img src="/screenshots/login_screen.png" height="auto" width="300" hspace="20">
+<img src="/screenshots/login_screen.png" height="auto" width="200" hspace="20">
 
-<img src="/screenshots/signup.png" height="auto" width="300" hspace="20">
+<img src="/screenshots/signup.png" height="auto" width="200" hspace="20">
 
-<img src="/screenshots/country_code.png" height="auto" width="300" hspace="20">
+<img src="/screenshots/country_code.png" height="auto" width="200" hspace="20">
 
-<img src="/screenshots/verify.png" height="auto" width="300" hspace="20">
+<img src="/screenshots/verify.png" height="auto" width="200" hspace="20">
 
-<img src="/screenshots/dashboard.png" height="auto" width="300" hspace="20">
+<img src="/screenshots/dashboard.png" height="auto" width="200" hspace="20">
 
-<img src="/screenshots/learn.png" height="auto" width="300" hspace="20">
+<img src="/screenshots/learn.png" height="auto" width="200" hspace="20">
 
-<img src="/screenshots/jobs.png" height="auto" width="300" hspace="20">
+<img src="/screenshots/jobs.png" height="auto" width="200" hspace="20">
 
-<img src="/screenshots/profile.png" height="auto" width="300" hspace="20">
+<img src="/screenshots/profile.png" height="auto" width="200" hspace="20">
 
-<img src="/screenshots/chat.png" height="auto" width="300" hspace="20">
+<img src="/screenshots/chat.png" height="auto" width="200" hspace="20">
 
 </div>
