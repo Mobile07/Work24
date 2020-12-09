@@ -54,7 +54,7 @@ public class ProfileFragment extends Fragment {
         });
 
         initComponents(mGroup);
-        populateUserData();
+
 
         return mGroup;
     }
@@ -100,11 +100,8 @@ public class ProfileFragment extends Fragment {
         switch (userType){
             case "Freelancer":
                 profileTitle.setText("My Gigs");
-                //userGigs.setVisibility(RecyclerView.VISIBLE);
-                mRvManager = new LinearLayoutManager(getContext());
-                userGigs.setLayoutManager(mRvManager);
-                mMyGigsAdapter = new MyGigsAdapter(getContext());
-                userGigs.setAdapter(mMyGigsAdapter);
+                userGigs.setVisibility(RecyclerView.VISIBLE);
+               populateMyGigs();
                 Log.d("STATUS", "MADE IT HERE");
                 //populateMyGigs();
                 break;
@@ -127,9 +124,15 @@ public class ProfileFragment extends Fragment {
     }
 
     private void populateMyGigs() {
-        mRvManager = new LinearLayoutManager(getContext());
+        mRvManager = new LinearLayoutManager(getContext(),LinearLayoutManager.HORIZONTAL,false);
         userGigs.setLayoutManager(mRvManager);
         mMyGigsAdapter = new MyGigsAdapter(getContext());
         userGigs.setAdapter(mMyGigsAdapter);
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        populateUserData();
     }
 }

@@ -23,4 +23,5 @@
     <color name="pinkAccent">#ff4081</color>
     <color name="transparentWhite">#27FFFFFF</color>
     <color name="darkGray">#404040</color>
+    <color name="screenBackground">#D9F2FD</color>
 </resources>
