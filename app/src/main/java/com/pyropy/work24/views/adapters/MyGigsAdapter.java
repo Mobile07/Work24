@@ -35,7 +35,7 @@ public class MyGigsAdapter extends RecyclerView.Adapter<MyGigsAdapter.MyGigViewH
     public MyGigsAdapter(Context context){
         mContext = context;
         mygigs = new ArrayList<>();
-
+        mUtil = FirebaseUtil.getInstances(mContext);
         mListener = new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
@@ -48,7 +48,11 @@ public class MyGigsAdapter extends RecyclerView.Adapter<MyGigsAdapter.MyGigViewH
 
             @Override
             public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-
+                GigHelper uHelper = dataSnapshot.getValue(GigHelper.class);
+                Log.d("UserGigs:", uHelper.gigTitle);
+                uHelper.setId(dataSnapshot.getKey());
+                mygigs.add(uHelper);
+                notifyItemInserted(mygigs.size()-1);
             }
 
             @Override
@@ -66,7 +70,7 @@ public class MyGigsAdapter extends RecyclerView.Adapter<MyGigsAdapter.MyGigViewH
 
             }
         };
-        mUtil.mDbRef.child("user_gigs").child(mUtil.mAuthEmail).addChildEventListener(mListener);
+        mUtil.mDbRef.child("user-gigs").child(mUtil.mAuthEmail).addChildEventListener(mListener);
     }
 
     @NonNull
