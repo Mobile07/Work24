@@ -3,6 +3,8 @@ package com.pyropy.work24.views.activities;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.pyropy.work24.R;
+
 public class ViewGig extends AppCompatActivity {
 
     @Override

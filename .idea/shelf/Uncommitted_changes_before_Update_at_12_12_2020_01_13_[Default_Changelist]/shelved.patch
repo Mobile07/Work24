@@ -1,0 +1,361 @@
+Index: app/src/main/java/com/pyropy/work24/database/GigHelper.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.pyropy.work24.database;\r\n\r\npublic class GigHelper {\r\n\r\n    public String gigTitle, description, deliveryDate,price,img1Uri,img2Uri,img3Uri,category;\r\n\r\n    public GigHelper(String gigTitle, String description, String deliveryDate, String price, String img1Uri, String img2Uri, String img3Uri, String category) {\r\n        this.gigTitle = gigTitle;\r\n        this.description = description;\r\n        this.deliveryDate = deliveryDate;\r\n        this.price = price;\r\n        this.img1Uri = img1Uri;\r\n        this.img2Uri = img2Uri;\r\n        this.img3Uri = img3Uri;\r\n        this.category = category;\r\n    }\r\n\r\n    public GigHelper(){}\r\n\r\n    public String getGigTitle() {\r\n        return gigTitle;\r\n    }\r\n\r\n    public void setGigTitle(String gigTitle) {\r\n        this.gigTitle = gigTitle;\r\n    }\r\n\r\n    public String getDescription() {\r\n        return description;\r\n    }\r\n\r\n    public void setDescription(String description) {\r\n        this.description = description;\r\n    }\r\n\r\n    public String getDeliveryDate() {\r\n        return deliveryDate;\r\n    }\r\n\r\n    public void setDeliveryDate(String deliveryDate) {\r\n        this.deliveryDate = deliveryDate;\r\n    }\r\n\r\n    public String getPrice() {\r\n        return price;\r\n    }\r\n\r\n    public void setPrice(String price) {\r\n        this.price = price;\r\n    }\r\n\r\n    public String getImg1Uri() {\r\n        return img1Uri;\r\n    }\r\n\r\n    public void setImg1Uri(String img1Uri) {\r\n        this.img1Uri = img1Uri;\r\n    }\r\n\r\n    public String getImg2Uri() {\r\n        return img2Uri;\r\n    }\r\n\r\n    public void setImg2Uri(String img2Uri) {\r\n        this.img2Uri = img2Uri;\r\n    }\r\n\r\n    public String getImg3Uri() {\r\n        return img3Uri;\r\n    }\r\n\r\n    public void setImg3Uri(String img3Uri) {\r\n        this.img3Uri = img3Uri;\r\n    }\r\n\r\n    public String getCategory() {\r\n        return category;\r\n    }\r\n\r\n    public void setCategory(String category) {\r\n        this.category = category;\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/pyropy/work24/database/GigHelper.java	(revision 2ab942f466ddc415003a649ac78830d32929702e)
++++ app/src/main/java/com/pyropy/work24/database/GigHelper.java	(date 1607639517636)
+@@ -1,5 +1,6 @@
+ package com.pyropy.work24.database;
+ 
++//MODEL CLASS
+ public class GigHelper {
+ 
+     public String gigTitle, description, deliveryDate,price,img1Uri,img2Uri,img3Uri,category;
+Index: app/src/main/java/com/pyropy/work24/views/activities/MyJobScreen.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.pyropy.work24.views.activities;\r\n\r\nimport androidx.appcompat.app.AppCompatActivity;\r\nimport androidx.viewpager.widget.ViewPager;\r\n\r\nimport android.os.Bundle;\r\nimport android.util.Log;\r\n\r\nimport com.google.android.material.tabs.TabItem;\r\nimport com.google.android.material.tabs.TabLayout;\r\nimport com.pyropy.work24.R;\r\nimport com.pyropy.work24.views.adapters.JobPagerAdapter;\r\nimport com.pyropy.work24.views.fragments.MyJobsFragment;\r\nimport com.pyropy.work24.views.fragments.SavedJobsFragment;\r\n\r\npublic class MyJobScreen extends AppCompatActivity {\r\n\r\n    private TabLayout mTabLayout;\r\n    private ViewPager mViewPager;\r\n    private JobPagerAdapter mJobPagerAdapter;\r\n    private static final String TAG = \"MyGigScreen\";\r\n\r\n    @Override\r\n    protected void onCreate(Bundle savedInstanceState) {\r\n        super.onCreate(savedInstanceState);\r\n        setContentView(R.layout.activity_my_job_screen);\r\n\r\n        initComponents();\r\n\r\n        addFragToAdapter();\r\n\r\n        prepDisplay();\r\n\r\n    }\r\n\r\n    private void initComponents() {\r\n        mTabLayout = findViewById(R.id.myjob_tab_bar);\r\n        mViewPager = findViewById(R.id.myjob_viewpager);\r\n\r\n        mJobPagerAdapter = new JobPagerAdapter(getSupportFragmentManager());\r\n    }\r\n\r\n    private void addFragToAdapter() {\r\n        mJobPagerAdapter.addFragment(new MyJobsFragment(), getString(R.string.job_tab_title));\r\n        mJobPagerAdapter.addFragment(new SavedJobsFragment(), getString(R.string.saved_job_tab_title));\r\n        Log.d(TAG,\"Fragments added to Adapter.\");\r\n    }\r\n\r\n    private void prepDisplay() {\r\n        mViewPager.setAdapter(mJobPagerAdapter);\r\n\r\n        mTabLayout.setupWithViewPager(mViewPager);\r\n        Log.d(TAG, \"Display ready and launched\");\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/pyropy/work24/views/activities/MyJobScreen.java	(revision 2ab942f466ddc415003a649ac78830d32929702e)
++++ app/src/main/java/com/pyropy/work24/views/activities/MyJobScreen.java	(date 1607720015699)
+@@ -23,7 +23,7 @@
+     @Override
+     protected void onCreate(Bundle savedInstanceState) {
+         super.onCreate(savedInstanceState);
+-        setContentView(R.layout.activity_my_job_screen);
++//        setContentView(R.layout.activity_my_job_screen);
+ 
+         initComponents();
+ 
+@@ -34,8 +34,8 @@
+     }
+ 
+     private void initComponents() {
+-        mTabLayout = findViewById(R.id.myjob_tab_bar);
+-        mViewPager = findViewById(R.id.myjob_viewpager);
++//        mTabLayout = findViewById(R.id.myjob_tab_bar);
++//        mViewPager = findViewById(R.id.myjob_viewpager);
+ 
+         mJobPagerAdapter = new JobPagerAdapter(getSupportFragmentManager());
+     }
+Index: app/src/main/java/com/pyropy/work24/views/activities/MyGigScreen.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.pyropy.work24.views.activities;\r\n\r\nimport androidx.appcompat.app.AppCompatActivity;\r\nimport androidx.viewpager.widget.ViewPager;\r\n\r\nimport android.os.Bundle;\r\nimport android.util.Log;\r\n\r\nimport com.google.android.material.tabs.TabItem;\r\nimport com.google.android.material.tabs.TabLayout;\r\nimport com.pyropy.work24.views.fragments.MyGigsFragment;\r\nimport com.pyropy.work24.R;\r\nimport com.pyropy.work24.views.fragments.SavedGigFragment;\r\nimport com.pyropy.work24.views.adapters.GigPagerAdapter;\r\n\r\npublic class MyGigScreen extends AppCompatActivity {\r\n\r\n    private TabLayout mTabLayout;\r\n    private ViewPager mViewPager;\r\n    private static final String TAG = \"MyGigScreen\";\r\n    private GigPagerAdapter mGigPagerAdapter;\r\n\r\n    @Override\r\n    protected void onCreate(Bundle savedInstanceState) {\r\n        super.onCreate(savedInstanceState);\r\n        setContentView(R.layout.activity_my_gig_screen);\r\n\r\n        initComponents();\r\n\r\n        addFragToAdapter();\r\n\r\n        prepDisplay();\r\n\r\n\r\n    }\r\n\r\n\r\n    private void initComponents() {\r\n        mTabLayout = findViewById(R.id.mygig_tab_bar);\r\n        mViewPager = findViewById(R.id.mygig_viewpager);\r\n\r\n        mGigPagerAdapter = new GigPagerAdapter(getSupportFragmentManager());\r\n        Log.d(TAG,\"Components Initialized and ViewPagerAdapter Created.\");\r\n    }\r\n\r\n    private void addFragToAdapter() {\r\n        mGigPagerAdapter.addFragment(new MyGigsFragment(),getString(R.string.gig_tab_title));\r\n        mGigPagerAdapter.addFragment(new SavedGigFragment(),getString(R.string.saved_gig_tab_title));\r\n        Log.d(TAG,\"Fragments added to Adapter.\");\r\n    }\r\n\r\n    private void prepDisplay() {\r\n        //set adapter to viewpager\r\n        mViewPager.setAdapter(mGigPagerAdapter);\r\n\r\n        //add viewpager to tablayout\r\n        mTabLayout.setupWithViewPager(mViewPager);\r\n        Log.d(TAG,\"Display ready and launched.\");\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/pyropy/work24/views/activities/MyGigScreen.java	(revision 2ab942f466ddc415003a649ac78830d32929702e)
++++ app/src/main/java/com/pyropy/work24/views/activities/MyGigScreen.java	(date 1607720015792)
+@@ -23,7 +23,7 @@
+     @Override
+     protected void onCreate(Bundle savedInstanceState) {
+         super.onCreate(savedInstanceState);
+-        setContentView(R.layout.activity_my_gig_screen);
++//        setContentView(R.layout.activity_my_gig_screen);
+ 
+         initComponents();
+ 
+@@ -36,8 +36,8 @@
+ 
+ 
+     private void initComponents() {
+-        mTabLayout = findViewById(R.id.mygig_tab_bar);
+-        mViewPager = findViewById(R.id.mygig_viewpager);
++//        mTabLayout = findViewById(R.id.mygig_tab_bar);
++//        mViewPager = findViewById(R.id.mygig_viewpager);
+ 
+         mGigPagerAdapter = new GigPagerAdapter(getSupportFragmentManager());
+         Log.d(TAG,"Components Initialized and ViewPagerAdapter Created.");
+Index: app/src/main/res/layout/fragment_my_gigs.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<FrameLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    android:background=\"@color/colorLightestGrey\"\r\n    tools:context=\".views.fragments.MyGigsFragment\">\r\n\r\n    <TextView\r\n        android:id=\"@+id/myGigs_viewtext\"\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:background=\"@color/colorWhite\"\r\n        android:text=\"All Gigs\"\r\n        android:textAllCaps=\"false\"\r\n        android:textColor=\"#000000\"\r\n        android:textSize=\"30sp\" />\r\n\r\n    <androidx.recyclerview.widget.RecyclerView\r\n        android:id=\"@+id/mygigs_recycler_view\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"match_parent\"\r\n        android:layout_marginTop=\"50dp\"\r\n        android:paddingLeft=\"10dp\"\r\n        android:paddingRight=\"10dp\"/>\r\n\r\n</FrameLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/fragment_my_gigs.xml	(revision 2ab942f466ddc415003a649ac78830d32929702e)
++++ app/src/main/res/layout/fragment_my_gigs.xml	(date 1607639316609)
+@@ -1,27 +1,24 @@
+ <?xml version="1.0" encoding="utf-8"?>
+-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
++<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
+     xmlns:tools="http://schemas.android.com/tools"
+     android:layout_width="match_parent"
+     android:layout_height="match_parent"
+     android:background="@color/colorLightestGrey"
+     tools:context=".views.fragments.MyGigsFragment">
+ 
+-    <TextView
+-        android:id="@+id/myGigs_viewtext"
+-        android:layout_width="wrap_content"
+-        android:layout_height="wrap_content"
+-        android:background="@color/colorWhite"
+-        android:text="All Gigs"
+-        android:textAllCaps="false"
+-        android:textColor="#000000"
+-        android:textSize="30sp" />
+ 
+     <androidx.recyclerview.widget.RecyclerView
+         android:id="@+id/mygigs_recycler_view"
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+-        android:layout_marginTop="50dp"
+         android:paddingLeft="10dp"
+-        android:paddingRight="10dp"/>
++        android:paddingRight="10dp"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintHorizontal_bias="0.0"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent"
++        app:layout_constraintVertical_bias="0.0" />
+ 
+-</FrameLayout>
+\ No newline at end of file
++</androidx.constraintlayout.widget.ConstraintLayout>
+\ No newline at end of file
+Index: app/src/main/res/layout/activity_my_job_screen.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/activity_my_job_screen.xml	(revision 2ab942f466ddc415003a649ac78830d32929702e)
++++ app/src/main/res/layout/activity_my_job_screen.xml	(revision 2ab942f466ddc415003a649ac78830d32929702e)
+@@ -1,34 +0,0 @@
+-<?xml version="1.0" encoding="utf-8"?>
+-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+-    xmlns:app="http://schemas.android.com/apk/res-auto"
+-    xmlns:tools="http://schemas.android.com/tools"
+-    android:layout_width="match_parent"
+-    android:layout_height="match_parent"
+-    tools:context=".views.activities.MyJobScreen">
+-
+-    <com.google.android.material.tabs.TabLayout
+-        android:id="@+id/myjob_tab_bar"
+-        android:layout_width="409dp"
+-        android:layout_height="0dp"
+-        android:layout_marginStart="1dp"
+-        android:layout_marginEnd="1dp"
+-        android:layout_marginRight="1dp"
+-        android:layout_marginLeft="1dp"
+-        app:layout_constraintEnd_toEndOf="parent"
+-        app:layout_constraintStart_toStartOf="parent"
+-        app:layout_constraintTop_toTopOf="parent">
+-
+-
+-    </com.google.android.material.tabs.TabLayout>
+-
+-    <androidx.viewpager.widget.ViewPager
+-        android:id="@+id/myjob_viewpager"
+-        android:layout_width="0dp"
+-        android:layout_height="0dp"
+-        app:layout_constraintBottom_toBottomOf="parent"
+-        app:layout_constraintEnd_toEndOf="parent"
+-        app:layout_constraintStart_toStartOf="parent"
+-        app:layout_constraintTop_toBottomOf="@+id/myjob_tab_bar" />
+-
+-
+-</androidx.constraintlayout.widget.ConstraintLayout>
+\ No newline at end of file
+Index: app/src/main/res/layout/activity_my_gig_screen.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/activity_my_gig_screen.xml	(revision 2ab942f466ddc415003a649ac78830d32929702e)
++++ app/src/main/res/layout/activity_my_gig_screen.xml	(revision 2ab942f466ddc415003a649ac78830d32929702e)
+@@ -1,34 +0,0 @@
+-<?xml version="1.0" encoding="utf-8"?>
+-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+-    xmlns:app="http://schemas.android.com/apk/res-auto"
+-    xmlns:tools="http://schemas.android.com/tools"
+-    android:layout_width="match_parent"
+-    android:layout_height="match_parent"
+-    tools:context=".views.activities.MyGigScreen">
+-
+-    <com.google.android.material.tabs.TabLayout
+-        android:id="@+id/mygig_tab_bar"
+-        android:layout_width="409dp"
+-        android:layout_height="0dp"
+-        android:layout_marginStart="1dp"
+-        android:layout_marginEnd="1dp"
+-        android:layout_marginRight="1dp"
+-        android:layout_marginLeft="1dp"
+-        app:layout_constraintEnd_toEndOf="parent"
+-        app:layout_constraintStart_toStartOf="parent"
+-        app:layout_constraintTop_toTopOf="parent">
+-
+-
+-    </com.google.android.material.tabs.TabLayout>
+-
+-    <androidx.viewpager.widget.ViewPager
+-        android:id="@+id/mygig_viewpager"
+-        android:layout_width="0dp"
+-        android:layout_height="0dp"
+-        app:layout_constraintBottom_toBottomOf="parent"
+-        app:layout_constraintEnd_toEndOf="parent"
+-        app:layout_constraintStart_toStartOf="parent"
+-        app:layout_constraintTop_toBottomOf="@+id/mygig_tab_bar" />
+-
+-
+-</androidx.constraintlayout.widget.ConstraintLayout>
+\ No newline at end of file
+Index: .idea/codeStyles/Project.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><component name=\"ProjectCodeStyleConfiguration\">\r\n  <code_scheme name=\"Project\" version=\"173\">\r\n    <JetCodeStyleSettings>\r\n      <option name=\"PACKAGES_TO_USE_STAR_IMPORTS\">\r\n        <value>\r\n          <package name=\"java.util\" alias=\"false\" withSubpackages=\"false\" />\r\n          <package name=\"kotlinx.android.synthetic\" alias=\"false\" withSubpackages=\"true\" />\r\n          <package name=\"io.ktor\" alias=\"false\" withSubpackages=\"true\" />\r\n        </value>\r\n      </option>\r\n      <option name=\"PACKAGES_IMPORT_LAYOUT\">\r\n        <value>\r\n          <package name=\"\" alias=\"false\" withSubpackages=\"true\" />\r\n          <package name=\"java\" alias=\"false\" withSubpackages=\"true\" />\r\n          <package name=\"javax\" alias=\"false\" withSubpackages=\"true\" />\r\n          <package name=\"kotlin\" alias=\"false\" withSubpackages=\"true\" />\r\n          <package name=\"\" alias=\"true\" withSubpackages=\"true\" />\r\n        </value>\r\n      </option>\r\n    </JetCodeStyleSettings>\r\n    <codeStyleSettings language=\"XML\">\r\n      <indentOptions>\r\n        <option name=\"CONTINUATION_INDENT_SIZE\" value=\"4\" />\r\n      </indentOptions>\r\n      <arrangement>\r\n        <rules>\r\n          <section>\r\n            <rule>\r\n              <match>\r\n                <AND>\r\n                  <NAME>xmlns:android</NAME>\r\n                  <XML_ATTRIBUTE />\r\n                  <XML_NAMESPACE>^$</XML_NAMESPACE>\r\n                </AND>\r\n              </match>\r\n            </rule>\r\n          </section>\r\n          <section>\r\n            <rule>\r\n              <match>\r\n                <AND>\r\n                  <NAME>xmlns:.*</NAME>\r\n                  <XML_ATTRIBUTE />\r\n                  <XML_NAMESPACE>^$</XML_NAMESPACE>\r\n                </AND>\r\n              </match>\r\n              <order>BY_NAME</order>\r\n            </rule>\r\n          </section>\r\n          <section>\r\n            <rule>\r\n              <match>\r\n                <AND>\r\n                  <NAME>.*:id</NAME>\r\n                  <XML_ATTRIBUTE />\r\n                  <XML_NAMESPACE>http://schemas.android.com/apk/res/android</XML_NAMESPACE>\r\n                </AND>\r\n              </match>\r\n            </rule>\r\n          </section>\r\n          <section>\r\n            <rule>\r\n              <match>\r\n                <AND>\r\n                  <NAME>.*:name</NAME>\r\n                  <XML_ATTRIBUTE />\r\n                  <XML_NAMESPACE>http://schemas.android.com/apk/res/android</XML_NAMESPACE>\r\n                </AND>\r\n              </match>\r\n            </rule>\r\n          </section>\r\n          <section>\r\n            <rule>\r\n              <match>\r\n                <AND>\r\n                  <NAME>name</NAME>\r\n                  <XML_ATTRIBUTE />\r\n                  <XML_NAMESPACE>^$</XML_NAMESPACE>\r\n                </AND>\r\n              </match>\r\n            </rule>\r\n          </section>\r\n          <section>\r\n            <rule>\r\n              <match>\r\n                <AND>\r\n                  <NAME>style</NAME>\r\n                  <XML_ATTRIBUTE />\r\n                  <XML_NAMESPACE>^$</XML_NAMESPACE>\r\n                </AND>\r\n              </match>\r\n            </rule>\r\n          </section>\r\n          <section>\r\n            <rule>\r\n              <match>\r\n                <AND>\r\n                  <NAME>.*</NAME>\r\n                  <XML_ATTRIBUTE />\r\n                  <XML_NAMESPACE>^$</XML_NAMESPACE>\r\n                </AND>\r\n              </match>\r\n              <order>BY_NAME</order>\r\n            </rule>\r\n          </section>\r\n          <section>\r\n            <rule>\r\n              <match>\r\n                <AND>\r\n                  <NAME>.*</NAME>\r\n                  <XML_ATTRIBUTE />\r\n                  <XML_NAMESPACE>http://schemas.android.com/apk/res/android</XML_NAMESPACE>\r\n                </AND>\r\n              </match>\r\n              <order>ANDROID_ATTRIBUTE_ORDER</order>\r\n            </rule>\r\n          </section>\r\n          <section>\r\n            <rule>\r\n              <match>\r\n                <AND>\r\n                  <NAME>.*</NAME>\r\n                  <XML_ATTRIBUTE />\r\n                  <XML_NAMESPACE>.*</XML_NAMESPACE>\r\n                </AND>\r\n              </match>\r\n              <order>BY_NAME</order>\r\n            </rule>\r\n          </section>\r\n        </rules>\r\n      </arrangement>\r\n    </codeStyleSettings>\r\n  </code_scheme>\r\n</component>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/codeStyles/Project.xml	(revision 2ab942f466ddc415003a649ac78830d32929702e)
++++ .idea/codeStyles/Project.xml	(date 1606748625959)
+@@ -18,6 +18,9 @@
+         </value>
+       </option>
+     </JetCodeStyleSettings>
++    <MarkdownNavigatorCodeStyleSettings>
++      <option name="RIGHT_MARGIN" value="72" />
++    </MarkdownNavigatorCodeStyleSettings>
+     <codeStyleSettings language="XML">
+       <indentOptions>
+         <option name="CONTINUATION_INDENT_SIZE" value="4" />
+Index: .idea/.name
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/.name	(date 1606748625529)
++++ .idea/.name	(date 1606748625529)
+@@ -0,0 +1,1 @@
++Work24
+\ No newline at end of file
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_1_8\" project-jdk-name=\"1.8\" project-jdk-type=\"JavaSDK\">\r\n    <output url=\"file://$PROJECT_DIR$/build/classes\" />\r\n  </component>\r\n  <component name=\"ProjectType\">\r\n    <option name=\"id\" value=\"Android\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/misc.xml	(revision 2ab942f466ddc415003a649ac78830d32929702e)
++++ .idea/misc.xml	(date 1607638476663)
+@@ -1,6 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK">
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+     <output url="file://$PROJECT_DIR$/build/classes" />
+   </component>
+   <component name="ProjectType">
+Index: .idea/markdown-navigator.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/markdown-navigator.xml	(date 1606748625950)
++++ .idea/markdown-navigator.xml	(date 1606748625950)
+@@ -0,0 +1,46 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="MarkdownProjectSettings">
++    <PreviewSettings splitEditorLayout="SPLIT" splitEditorPreview="PREVIEW" useGrayscaleRendering="false" zoomFactor="1.0" maxImageWidth="0" synchronizePreviewPosition="true" highlightPreviewType="LINE" highlightFadeOut="5" highlightOnTyping="true" synchronizeSourcePosition="true" verticallyAlignSourceAndPreviewSyncPosition="true" showSearchHighlightsInPreview="true" showSelectionInPreview="true" lastLayoutSetsDefault="false">
++      <PanelProvider>
++        <provider providerId="com.vladsch.md.nav.editor.swing.html.panel" providerName="Default - Swing" />
++      </PanelProvider>
++    </PreviewSettings>
++    <ParserSettings gitHubSyntaxChange="false" correctedInvalidSettings="false" emojiShortcuts="1" emojiImages="0">
++      <PegdownExtensions>
++        <option name="ATXHEADERSPACE" value="true" />
++        <option name="FENCED_CODE_BLOCKS" value="true" />
++        <option name="INTELLIJ_DUMMY_IDENTIFIER" value="true" />
++        <option name="RELAXEDHRULES" value="true" />
++        <option name="STRIKETHROUGH" value="true" />
++        <option name="TABLES" value="true" />
++        <option name="TASKLISTITEMS" value="true" />
++      </PegdownExtensions>
++      <ParserOptions>
++        <option name="COMMONMARK_LISTS" value="true" />
++        <option name="EMOJI_SHORTCUTS" value="true" />
++        <option name="GFM_TABLE_RENDERING" value="true" />
++        <option name="PRODUCTION_SPEC_PARSER" value="true" />
++        <option name="SIM_TOC_BLANK_LINE_SPACER" value="true" />
++      </ParserOptions>
++    </ParserSettings>
++    <HtmlSettings headerTopEnabled="false" headerBottomEnabled="false" bodyTopEnabled="false" bodyBottomEnabled="false" addPageHeader="false" addAnchorLinks="true" anchorLinksWrapText="false" imageUriSerials="false" addDocTypeHtml="true" noParaTags="false" defaultUrlTitle="false" migratedPlantUml="false" migratedAnchorLinks="false" plantUmlConversion="0">
++      <GeneratorProvider>
++        <provider providerId="com.vladsch.md.nav.editor.text.html.generator" providerName="Unmodified HTML Generator" />
++      </GeneratorProvider>
++      <headerTop />
++      <headerBottom />
++      <bodyTop />
++      <bodyBottom />
++      <fencedCodeConversions />
++    </HtmlSettings>
++    <CssSettings previewScheme="UI_SCHEME" cssUri="" isCssUriEnabled="false" isCssUriSerial="true" isCssTextEnabled="false" isDynamicPageWidth="true">
++      <StylesheetProvider>
++        <provider providerId="com.vladsch.md.nav.editor.text.html.css" providerName="No Stylesheet" />
++      </StylesheetProvider>
++      <ScriptProviders />
++      <cssText />
++      <cssUriHistory />
++    </CssSettings>
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/markdown-navigator-enh.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/markdown-navigator-enh.xml	(date 1606748625927)
++++ .idea/markdown-navigator-enh.xml	(date 1606748625927)
+@@ -0,0 +1,10 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="MarkdownEnhProjectSettings">
++    <AnnotatorSettings targetHasSpaces="true" linkCaseMismatch="true" wikiCaseMismatch="true" wikiLinkHasDashes="true" notUnderWikiHome="true" targetNotWikiPageExt="true" notUnderSourceWikiHome="true" targetNameHasAnchor="true" targetPathHasAnchor="true" wikiLinkHasSlash="true" wikiLinkHasSubdir="true" wikiLinkHasOnlyAnchor="true" linkTargetsWikiHasExt="true" linkTargetsWikiHasBadExt="true" notUnderSameRepo="true" targetNotUnderVcs="false" linkNeedsExt="true" linkHasBadExt="true" linkTargetNeedsExt="true" linkTargetHasBadExt="true" wikiLinkNotInWiki="true" imageTargetNotInRaw="true" repoRelativeAcrossVcsRoots="true" multipleWikiTargetsMatch="true" unresolvedLinkReference="true" linkIsIgnored="true" anchorIsIgnored="true" anchorIsUnresolved="true" anchorLineReferenceIsUnresolved="true" anchorLineReferenceFormat="true" anchorHasDuplicates="true" abbreviationDuplicates="true" abbreviationNotUsed="true" attributeIdDuplicateDefinition="true" attributeIdNotUsed="true" footnoteDuplicateDefinition="true" footnoteUnresolved="true" footnoteDuplicates="true" footnoteNotUsed="true" macroDuplicateDefinition="true" macroUnresolved="true" macroDuplicates="true" macroNotUsed="true" referenceDuplicateDefinition="true" referenceUnresolved="true" referenceDuplicates="true" referenceNotUsed="true" referenceUnresolvedNumericId="true" enumRefDuplicateDefinition="true" enumRefUnresolved="true" enumRefDuplicates="true" enumRefNotUsed="true" enumRefLinkUnresolved="true" enumRefLinkDuplicates="true" simTocUpdateNeeded="true" simTocTitleSpaceNeeded="true" />
++    <HtmlExportSettings updateOnSave="false" parentDir="" targetDir="" cssDir="css" scriptDir="js" plainHtml="false" imageDir="" copyLinkedImages="false" imagePathType="0" targetPathType="2" targetExt="" useTargetExt="false" noCssNoScripts="false" useElementStyleAttribute="false" linkToExportedHtml="true" exportOnSettingsChange="true" regenerateOnProjectOpen="false" linkFormatType="HTTP_ABSOLUTE" />
++    <LinkMapSettings>
++      <textMaps />
++    </LinkMapSettings>
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/compiler.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/compiler.xml	(date 1607638476743)
++++ .idea/compiler.xml	(date 1607638476743)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="CompilerConfiguration">
++    <bytecodeTargetLevel target="1.8" />
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/gradle.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"GradleMigrationSettings\" migrationVersion=\"1\" />\r\n  <component name=\"GradleSettings\">\r\n    <option name=\"linkedExternalProjectsSettings\">\r\n      <GradleProjectSettings>\r\n        <option name=\"testRunner\" value=\"PLATFORM\" />\r\n        <option name=\"distributionType\" value=\"DEFAULT_WRAPPED\" />\r\n        <option name=\"externalProjectPath\" value=\"$PROJECT_DIR$\" />\r\n        <option name=\"gradleHome\" value=\"$APPLICATION_HOME_DIR$/gradle/gradle-4.1\" />\r\n        <option name=\"gradleJvm\" value=\"1.8\" />\r\n        <option name=\"modules\">\r\n          <set>\r\n            <option value=\"$PROJECT_DIR$\" />\r\n            <option value=\"$PROJECT_DIR$/app\" />\r\n          </set>\r\n        </option>\r\n        <option name=\"resolveModulePerSourceSet\" value=\"false\" />\r\n      </GradleProjectSettings>\r\n    </option>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/gradle.xml	(revision 2ab942f466ddc415003a649ac78830d32929702e)
++++ .idea/gradle.xml	(date 1607638244353)
+@@ -16,6 +16,7 @@
+           </set>
+         </option>
+         <option name="resolveModulePerSourceSet" value="false" />
++        <option name="useQualifiedModuleNames" value="true" />
+       </GradleProjectSettings>
+     </option>
+   </component>

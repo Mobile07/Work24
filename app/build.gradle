@@ -89,6 +89,14 @@ android {
         implementation 'com.google.firebase:firebase-storage:16.0.4'
         implementation 'com.wdullaer:materialdatetimepicker:4.2.3'
         implementation 'com.github.f0ris.sweetalert:library:1.5.6'
+
+        // Dependency FirebaseUI for Firebase Realtime Database
+        implementation 'com.firebaseui:firebase-ui-database:6.2.1'
+
+        // Dependency for Firebase REaltime Database
+        implementation 'com.google.firebase:firebase-database:19.3.1'
+
+        implementation 'com.google.android.material:material:1.1.0'
     }
 }
 

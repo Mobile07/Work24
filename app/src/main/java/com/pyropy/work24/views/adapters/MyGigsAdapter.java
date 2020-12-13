@@ -13,7 +13,6 @@ import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.Query;
 import com.pyropy.work24.R;
 import com.pyropy.work24.database.FirebaseUtil;
 import com.pyropy.work24.database.GigHelper;
@@ -32,9 +31,9 @@ public class MyGigsAdapter extends RecyclerView.Adapter<MyGigsAdapter.MyGigViewH
     ChildEventListener mListener;
     ArrayList<GigHelper> mygigs;
 
-    public MyGigsAdapter(Context context){
+    public MyGigsAdapter(ArrayList<GigHelper> mygigs, Context context){
         mContext = context;
-        mygigs = new ArrayList<>();
+        this.mygigs = new ArrayList<>();
         mUtil = FirebaseUtil.getInstances(mContext);
         mListener = new ChildEventListener() {
             @Override
@@ -42,8 +41,8 @@ public class MyGigsAdapter extends RecyclerView.Adapter<MyGigsAdapter.MyGigViewH
                 GigHelper uHelper = dataSnapshot.getValue(GigHelper.class);
                 Log.d("UserGigs:", uHelper.gigTitle);
                 uHelper.setId(dataSnapshot.getKey());
-                mygigs.add(uHelper);
-                notifyItemInserted(mygigs.size()-1);
+                MyGigsAdapter.this.mygigs.add(uHelper);
+                notifyItemInserted(MyGigsAdapter.this.mygigs.size()-1);
             }
 
             @Override
@@ -51,8 +50,8 @@ public class MyGigsAdapter extends RecyclerView.Adapter<MyGigsAdapter.MyGigViewH
                 GigHelper uHelper = dataSnapshot.getValue(GigHelper.class);
                 Log.d("UserGigs:", uHelper.gigTitle);
                 uHelper.setId(dataSnapshot.getKey());
-                mygigs.add(uHelper);
-                notifyItemInserted(mygigs.size()-1);
+                MyGigsAdapter.this.mygigs.add(uHelper);
+                notifyItemInserted(MyGigsAdapter.this.mygigs.size()-1);
             }
 
             @Override
@@ -84,11 +83,18 @@ public class MyGigsAdapter extends RecyclerView.Adapter<MyGigsAdapter.MyGigViewH
     public void onBindViewHolder(@NonNull MyGigViewHolder holder, int position) {
         GigHelper uHelper = mygigs.get(position);
         holder.bind(uHelper, mContext);
+
     }
 
     @Override
     public int getItemCount() {
         return mygigs.size();
+    }
+
+    public void startListening() {
+    }
+
+    public void stopListening() {
     }
 
     public static class MyGigViewHolder extends RecyclerView.ViewHolder{
