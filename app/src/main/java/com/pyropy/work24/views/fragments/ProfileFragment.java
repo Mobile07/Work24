@@ -22,10 +22,13 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.pyropy.work24.R;
 import com.pyropy.work24.database.FirebaseUtil;
+import com.pyropy.work24.database.GigHelper;
 import com.pyropy.work24.model.UsersModel;
 import com.pyropy.work24.views.activities.InsertGig;
 import com.pyropy.work24.views.adapters.MyCoursesAdapter;
 import com.pyropy.work24.views.adapters.MyGigsAdapter;
+
+import java.util.ArrayList;
 
 
 public class ProfileFragment extends Fragment {
@@ -37,6 +40,7 @@ public class ProfileFragment extends Fragment {
     private RecyclerView userGigs, userCourses;
     private LinearLayoutManager mRvManager;
     MyGigsAdapter mMyGigsAdapter;
+    ArrayList<GigHelper> mygigs;
     MyCoursesAdapter mMyCoursesAdapter;
 
     @Override
@@ -126,7 +130,7 @@ public class ProfileFragment extends Fragment {
     private void populateMyGigs() {
         mRvManager = new LinearLayoutManager(getContext(),LinearLayoutManager.HORIZONTAL,false);
         userGigs.setLayoutManager(mRvManager);
-        mMyGigsAdapter = new MyGigsAdapter(getContext());
+        mMyGigsAdapter = new MyGigsAdapter(mygigs, getContext());
         userGigs.setAdapter(mMyGigsAdapter);
     }
 
